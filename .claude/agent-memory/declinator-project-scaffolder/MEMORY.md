@@ -1,0 +1,1 @@
+- [Project Structure & Architecture](project_structure.md) — Declinator folder layout, types, and tech stack
