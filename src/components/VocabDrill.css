@@ -1,0 +1,478 @@
+/* VocabDrill Component Styles */
+
+.vocab-drill {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Header with mode toggle */
+.vocab-drill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.vocab-drill-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #2c3e50;
+  flex: 1;
+  min-width: 150px;
+}
+
+.vocab-mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.vocab-mode-toggle label {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.vocab-select {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 2px solid #bdc3c7;
+  border-radius: 4px;
+  background-color: white;
+  color: #2c3e50;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vocab-select:hover {
+  border-color: #3498db;
+}
+
+.vocab-select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Progress section */
+.vocab-progress-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.vocab-progress-text {
+  font-size: 0.95rem;
+  color: #34495e;
+}
+
+.vocab-progress-text strong {
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.vocab-progress-bar {
+  width: 100%;
+  height: 24px;
+  background-color: #ecf0f1;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #bdc3c7;
+}
+
+.vocab-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3498db, #2980b9);
+  transition: width 0.4s ease;
+  border-radius: 12px;
+}
+
+/* 100% mastered = green */
+.vocab-progress-fill[style*="width: 100%"] {
+  background: linear-gradient(90deg, #27ae60, #229954);
+}
+
+/* Filter section */
+.vocab-filter-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.vocab-filter-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: #34495e;
+  cursor: pointer;
+  user-select: none;
+}
+
+.vocab-checkbox {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+.vocab-checkbox:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.vocab-filter-label:has(.vocab-checkbox:disabled) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Card counter */
+.vocab-counter {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+/* Flashcard */
+.vocab-card {
+  background: white;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  padding: 2rem;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.15);
+  transition: all 0.3s ease;
+}
+
+.vocab-card:hover {
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.25);
+}
+
+.vocab-card-front {
+  text-align: center;
+  width: 100%;
+}
+
+.vocab-card-primary {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  word-break: break-word;
+}
+
+.vocab-card-principal-parts {
+  font-size: 1rem;
+  color: #7f8c8d;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  margin-top: 0.75rem;
+}
+
+/* Input section */
+.vocab-input-section {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 500px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.vocab-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #bdc3c7;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.vocab-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.vocab-input:disabled {
+  background-color: #ecf0f1;
+  color: #7f8c8d;
+  cursor: not-allowed;
+}
+
+/* Buttons */
+.vocab-btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.vocab-btn:focus-visible {
+  outline: 2px solid #3498db;
+  outline-offset: 2px;
+}
+
+.vocab-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.vocab-btn-submit {
+  background-color: #3498db;
+  color: white;
+  min-width: 100px;
+}
+
+.vocab-btn-submit:hover:not(:disabled) {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.vocab-btn-submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.vocab-btn-next {
+  background-color: #27ae60;
+  color: white;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.vocab-btn-next:hover:not(:disabled) {
+  background-color: #229954;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(39, 174, 96, 0.3);
+}
+
+.vocab-btn-next:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.vocab-btn-nav {
+  background-color: #3498db;
+  color: white;
+  flex: 1;
+  min-width: 120px;
+}
+
+.vocab-btn-nav:hover:not(:disabled) {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.vocab-btn-nav:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.vocab-btn-reset {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.vocab-btn-reset:hover:not(:disabled) {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(231, 76, 60, 0.3);
+}
+
+.vocab-btn-reset:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Feedback */
+.vocab-feedback {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  animation: slideDown 0.3s ease;
+}
+
+.vocab-feedback-correct {
+  background-color: #d4edda;
+  color: #155724;
+  border: 2px solid #27ae60;
+}
+
+.vocab-feedback-incorrect {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 2px solid #e74c3c;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.vocab-correct-answer {
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
+
+.vocab-correct-answer strong {
+  color: #721c24;
+  font-weight: 700;
+}
+
+/* Navigation section */
+.vocab-nav {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Empty state */
+.vocab-empty-state {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f0f2f5;
+  border-radius: 8px;
+}
+
+.vocab-celebration {
+  font-size: 1.5rem;
+  color: #27ae60;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+.vocab-empty-msg {
+  color: #7f8c8d;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .vocab-drill-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .vocab-drill-header h3 {
+    width: 100%;
+  }
+
+  .vocab-mode-toggle {
+    width: 100%;
+  }
+
+  .vocab-mode-toggle label {
+    white-space: nowrap;
+  }
+
+  .vocab-card {
+    padding: 1.5rem 1rem;
+    min-height: 200px;
+  }
+
+  .vocab-card-primary {
+    font-size: 2rem;
+  }
+
+  .vocab-card-principal-parts {
+    font-size: 0.9rem;
+  }
+
+  .vocab-input-section {
+    flex-direction: column;
+  }
+
+  .vocab-input {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .vocab-btn-submit {
+    width: 100%;
+  }
+
+  .vocab-nav {
+    gap: 0.5rem;
+  }
+
+  .vocab-btn-nav {
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vocab-drill {
+    gap: 1rem;
+  }
+
+  .vocab-card {
+    padding: 1rem;
+    min-height: 180px;
+    gap: 1rem;
+  }
+
+  .vocab-card-primary {
+    font-size: 1.75rem;
+  }
+
+  .vocab-card-principal-parts {
+    font-size: 0.85rem;
+  }
+
+  .vocab-progress-text {
+    font-size: 0.85rem;
+  }
+
+  .vocab-counter {
+    font-size: 0.85rem;
+  }
+
+  .vocab-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .vocab-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .vocab-btn-nav {
+    width: 100%;
+  }
+
+  .vocab-input-section {
+    gap: 0.5rem;
+  }
+}

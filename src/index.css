@@ -16,9 +16,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f8f9fa;
-  color: #2c3e50;
+  background-color: #f4f5f7;
+  color: #1a1f2e;
   line-height: 1.6;
+  font-size: 1rem;
 }
 
 code {
@@ -30,10 +31,10 @@ code {
 }
 
 pre {
-  background-color: #2c3e50;
-  color: #ecf0f1;
+  background-color: #1e1b4b;
+  color: #e0e7ff;
   padding: 1rem;
-  border-radius: 4px;
+  border-radius: 6px;
   overflow-x: auto;
 }
 
@@ -56,7 +57,7 @@ select {
 }
 
 a {
-  color: #3498db;
+  color: #6366f1;
   text-decoration: none;
 }
 
@@ -65,7 +66,7 @@ a:hover {
 }
 
 a:focus-visible {
-  outline: 2px solid #3498db;
+  outline: 2px solid #6366f1;
   outline-offset: 2px;
 }
 
@@ -74,14 +75,201 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid #3498db;
+  outline: 2px solid #6366f1;
   outline-offset: 2px;
+}
+
+/* ── Dark mode: sync body background with app root ──────────────────────── */
+/* When .dark-mode is on the #root / .app div, keep body in sync
+   so there is no white flash on edges / overscroll. */
+.dark-mode,
+.dark-mode body {
+  background-color: #0f0f1a;
+  color: #e8eaf6;
+}
+
+/* Component-level dark mode: ensure inputs/selects inside .dark-mode
+   get a readable treatment since they have hard-coded colors in their own CSS. */
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select {
+  background-color: #1a1a2e;
+  color: #e8eaf6;
+  border-color: #2d2d4e;
+  color-scheme: dark;
+}
+
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+  color: #4a5568;
+}
+
+/* Invert the component cards / panels inside tab-content for dark mode */
+.dark-mode .chart-info,
+.dark-mode .summary-section,
+.dark-mode .vocab-empty-state {
+  background-color: #16213e;
+  color: #e8eaf6;
+}
+
+.dark-mode .chart-info h3,
+.dark-mode .summary-section h3,
+.dark-mode .summary-header h3,
+.dark-mode .chart-selector-container label,
+.dark-mode .vocab-mode-toggle label,
+.dark-mode .vocab-drill-header h3,
+.dark-mode .mistakes-list h4 {
+  color: #c7d2fe;
+}
+
+.dark-mode .chart-info p,
+.dark-mode .vocab-progress-text,
+.dark-mode .vocab-filter-label,
+.dark-mode .vocab-counter {
+  color: #a5b4fc;
+}
+
+.dark-mode .chart-table-container {
+  border-color: #2d2d4e;
+  background-color: #1a1a2e;
+}
+
+.dark-mode .chart-table thead,
+.dark-mode .chart-table .col-header,
+.dark-mode .chart-table .row-header-cell {
+  background-color: #0d0c1d;
+  color: #e0e7ff;
+}
+
+.dark-mode .chart-table .row-header {
+  background-color: #16213e;
+  color: #c7d2fe;
+  border-color: #2d2d4e;
+}
+
+.dark-mode .chart-table th,
+.dark-mode .chart-table td,
+.dark-mode .chart-cell {
+  border-color: #2d2d4e;
+}
+
+.dark-mode .chart-input {
+  color: #e8eaf6;
+  background-color: transparent;
+}
+
+.dark-mode .chart-select,
+.dark-mode .vocab-select,
+.dark-mode .passage-dropdown {
+  background-color: #1a1a2e;
+  color: #e8eaf6;
+  border-color: #2d2d4e;
+}
+
+.dark-mode .chart-select:hover:not(:disabled),
+.dark-mode .vocab-select:hover,
+.dark-mode .passage-dropdown:hover {
+  border-color: #818cf8;
+}
+
+.dark-mode .vocab-card {
+  background-color: #16213e;
+  border-color: #6366f1;
+}
+
+.dark-mode .vocab-card-primary {
+  color: #e8eaf6;
+}
+
+.dark-mode .vocab-progress-bar {
+  background-color: #0d0c1d;
+  border-color: #2d2d4e;
+}
+
+.dark-mode .passage-card {
+  background-color: #1a1a2e;
+  border-left-color: #6366f1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+
+.dark-mode .passage-title {
+  color: #e8eaf6;
+  border-bottom-color: #4f46e5;
+}
+
+.dark-mode .passage-source {
+  color: #818cf8;
+}
+
+.dark-mode .passage-text {
+  background-color: #0f0f1a;
+  color: #c7d2fe;
+}
+
+.dark-mode .passage-translations {
+  background-color: #16213e;
+}
+
+.dark-mode .passage-translations summary {
+  color: #a5b4fc;
+}
+
+.dark-mode .sentence-pair {
+  background-color: #0f0f1a;
+  border-left-color: #6366f1;
+}
+
+.dark-mode .sentence-latin {
+  color: #c7d2fe;
+}
+
+.dark-mode .sentence-english {
+  color: #818cf8;
+}
+
+.dark-mode .question-card {
+  background-color: #1a1a2e;
+  border-color: #2d2d4e;
+}
+
+.dark-mode .question-text,
+.dark-mode .questions-title {
+  color: #e8eaf6;
+}
+
+.dark-mode .choice-button {
+  background-color: #16213e;
+  border-color: #2d2d4e;
+  color: #c7d2fe;
+}
+
+.dark-mode .choice-button:hover:not(:disabled) {
+  border-color: #6366f1;
+  background-color: rgba(99, 102, 241, 0.15);
+}
+
+.dark-mode .choice-button.selected {
+  border-color: #6366f1;
+  background-color: rgba(99, 102, 241, 0.2);
+}
+
+.dark-mode .question-explanation {
+  background-color: #0f0f1a;
+  border-left-color: #6366f1;
+  color: #a5b4fc;
+}
+
+.dark-mode .mistakes-list li {
+  background-color: rgba(231, 76, 60, 0.15);
+  border-color: #c0392b;
+  color: #f0b0aa;
 }
 
 /* Print styles */
 @media print {
   body {
     background-color: white;
+    color: black;
   }
 
   button,
